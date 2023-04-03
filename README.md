@@ -1,7 +1,7 @@
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/hyeonsangjeon/youtube-dl-nas/master/LICENSE)
-![Docker Pulls Shield](https://img.shields.io/docker/pulls/modenaf360/youtube-dl-nas)
-![Docker Stars Shield](https://img.shields.io/docker/stars/modenaf360/youtube-dl-nas)
-# youtube-dl-nas
+
+![Docker Pulls Shield](https://img.shields.io/docker/pulls/roachovans/youtube-dl-nas-rpi)
+![Docker Stars Shield](https://img.shields.io/docker/stars/roachovans/youtube-dl-nas-rpi)
+# youtube-dl-nas-rpi
 
 simple youtube download micro web queue server. 
 To prevent a queue attack when using NAS as a server, a making account was created when creating a docker container, and a new UI was added.
@@ -14,29 +14,16 @@ https://hub.docker.com/r/modenaf360/youtube-dl-nas/
 - base : [`python queue server`](https://github.com/manbearwiz/youtube-dl-server).
 - websocket : [`bottle-websocket`](https://github.com/zeekay/bottle-websocket).
 
-<img src="https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/Architecture-Youtube-dl-nas.png" width="90%">
 
-![screenshot1](https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/youtube-dl-server-login.png?raw=true)
+![screenshot1](https://github.com/roachovans/youtube/blob/main/pic/youtube-dl-server-login.png?raw=true)
+
 
 ### Update Info
-- 2023.02.19 : [Patch] Changed the executable from youtube-dl to yt-dlp for fixed error about 'Unable to extract uploader id' and download speed..
-- 2022.09.29 : [Patch] Check for updates essential packages on first startup container.
-- 2022.09.28 : [Patch] Clears URL input when submitting the form.
-- 2021.12.09 : [Patch] Fix proxy setting bug
-- 2021.05.03 : [Patch] Fix random mkv or mp4 format when specifying resolution
-- 2020.11.13 : [Patch] Added docker optinal variable to support youtube-dl proxy
-- 2020.08.12 : [Patch] Added audio-mp3 option 
-- 2019.04.25 : [Patch] Failed to fetch jessie backports repository patch during build Dockerfile, Add Scheduler update "pip install -U youtube-dl" once a day.You no longer need to update pip youtube-dl when inexecutable in the container.
-- 2020.04.07 : [Patch] Audio only option for web-ui and REST call. Change username field type for compatiblity
-- 2020.02.10 : [Patch] Modifying so this will work behind HTTPS as well.
-- 2019.02.13 : [Patch] binary excution error update,  : 'caused by ExtractorError("Could not find JS function 'encodeURIComponent'; please report this issue on https://yt-dl.org/bug ..'. Binary Excution file update docker rebuild,Specify release version in html page
-- 2018.11.08 : [Patch] binary excution error update,  : 'youtube_dl.utils.RegexNotFoundError: Unable to extract Initial JS player signature function name'. some url like(https://youtu.be/), Handling Variables on Application Ports for Using the docker Network Host Mode,Specify release version in html page
-- 2018.10.06 : [Patch] Prevent thread death due to websocket exception in walker thread after download, add REST API 
-- 2018.10.01 : [Minor Patch] Patching worker thread dead symptom when moving the browser during download, add resolution 1440p, 2160p(4k)
-- 2018.09.28 : [Add functional option] Resolution selectable, Downloaded result html table representation**
+- 2023.04.03 add support for arm64 and arm 
+- 2023.04.02 coppy from https://github.com/hyeonsangjeon/youtube-dl-nas
  
 #### You can check the status of download queue processing in real time using websocket from the message below the text box.
-![screenshot](https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/youtube-dl-server.png?raw=true)
+![screenshot](https://github.com/roachovans/youtube/blob/main/pic/youtube-dl-server.png?raw=true)
 
 
 ### How to use this image
@@ -105,18 +92,19 @@ docker exec -i -t youtube-dl /bin/bash
 
 - docker volume mount setting 
 
-![screenshot1](https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/volume_set_synology.png?raw=true)
+![screenshot1](https://github.com/roachovans/youtube/blob/main/pic/volume_set_synology.png?raw=true)
 
 
 
 - ID, Password setting to docker environment
-![screenshot1](https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/id_pw_set_synology.png?raw=true)
+
+![screenshot1](https://github.com/roachovans/youtube/blob/main/pic/id_pw_set_synology.png?raw=true)
 
 ### Reference
-[1]: https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/youtube-dl-server-login.png
-[2]: https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/youtube-dl-server.png
-[3]: https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/volume_set_synology.png
-[4]: https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/id_pw_set_synology.png
+[1]: https://github.com/roachovans/youtube/blob/main/pic/youtube-dl-server-login.png
+[2]: https://github.com/roachovans/youtube/blob/main/pic/youtube-dl-server.png
+[3]: https://github.com/roachovans/youtube/blob/main/pic/volume_set_synology.png
+[4]: https://github.com/roachovans/youtube/blob/main/pic/id_pw_set_synology.png
 
 `[1]`. https://docs.docker.com/engine/reference/commandline/cli/#environment-variables
 
