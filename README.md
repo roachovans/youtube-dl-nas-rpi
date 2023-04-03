@@ -1,7 +1,7 @@
 
 ![Docker Pulls Shield](https://img.shields.io/docker/pulls/roachovans/youtube-dl-nas-rpi)
 ![Docker Stars Shield](https://img.shields.io/docker/stars/roachovans/youtube-dl-nas-rpi)
-# youtube-dl-nas-rpi
+# youtube-dl-nas-rpi (arm, arm64)
 
 simple youtube download micro web queue server. 
 To prevent a queue attack when using NAS as a server, a making account was created when creating a docker container, and a new UI was added.
